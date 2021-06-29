@@ -313,6 +313,11 @@ wget -O port-vless "https://raw.githubusercontent.com/sukirmanoke/project/main/p
 wget -O wbmn "https://raw.githubusercontent.com/sukirmanoke/project/main/webmin.sh"
 wget -O xp "https://raw.githubusercontent.com/sukirmanoke/project/main/xp.sh"
 wget -O swap "https://raw.githubusercontent.com/sukirmanoke/project/main/swapkvm.sh"
+wget -O bannerku "https://raw.githubusercontent.com/agian123/gasken/main/bannerku"
+wget -O /usr/bin/user-limit https://raw.githubusercontent.com/bokiroke1/project-aw/main/user-limit.sh && chmod +x /usr/bin/user-limit
+wget -O cfd "https://raw.githubusercontent.com/agian123/gasken/main/cfd.sh"
+wget -O cff "https://raw.githubusercontent.com/agian123/gasken/main/cff.sh"
+wget -O cfh "https://raw.githubusercontent.com/agian123/gasken/main/cfh.sh"
 chmod +x menu
 chmod +x l2tp
 chmod +x ssh
@@ -353,6 +358,10 @@ chmod +x port-vless
 chmod +x wbmn
 chmod +x xp
 chmod +x swap
+chmod +x bannerku
+chmod +x cfd
+chmod +x cff
+chmod +x cfh
 
 echo "0 5 * * * root clear-log" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
