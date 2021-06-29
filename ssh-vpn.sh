@@ -20,7 +20,7 @@ commonname=sosohoha.my.id
 email=admin@sosohoha.my.id
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/bokiroke1/project-aw/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/sukirmanoke/project/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -116,14 +116,14 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/bokiroke1/project-aw/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/sukirmanoke/project/main/nginx.conf"
 mkdir -p /home/vps/public_html
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/sukirmanoke/project/main/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/bokiroke1/project-aw/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/sukirmanoke/project/main/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -362,7 +362,6 @@ chmod +x bannerku
 chmod +x cfd
 chmod +x cff
 chmod +x cfh
-
 echo "0 5 * * * root clear-log" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 # remove unnecessary files
