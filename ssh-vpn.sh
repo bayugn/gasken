@@ -27,7 +27,7 @@ chmod +x /etc/pam.d/common-password
 cd
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/edu-proxy https://raw.githubusercontent.com/bokiroke1/project-aw/main/cdn.py
+wget -q -O /usr/local/bin/edu-proxy https://raw.githubusercontent.com/sukirmanoke/project/main/cdn.py
 chmod +x /usr/local/bin/edu-proxy
 
 # Installing Service
@@ -213,7 +213,7 @@ apt -y install tmux
 apt -y install ruby
 gem install lolcat
 apt -y install figlet
-wget -q -O /usr/local/bin/cdn https://raw.githubusercontent.com/bokiroke1/project-aw/main/cdn.py
+wget -q -O /usr/local/bin/cdn https://raw.githubusercontent.com/sukirmanoke/project/main/cdn.py
 chmod +x /usr/local/bin/cdn
 
 #OpenVPN
