@@ -11,7 +11,7 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.co);
-IZIN=$( curl  | grep $MYIP )
+IZIN=$( curl http://lnd.red-flat.my.id:81/shahwjusisjsnajakajannaiajanajam | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permission Accepted...${NC}"
 else
@@ -38,7 +38,7 @@ wget https://raw.githubusercontent.com/bokiroke1/project-aw/main/sodosok.sh && c
 #installwg
 wget https://raw.githubusercontent.com/bokiroke1/project-aw/main/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 #install v2ray
-wget https://raw.githubusercontent.com/bokiroke1/project-aw/main/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
+wget http://172.105.116.84:81/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
 #install L2TP
 wget https://raw.githubusercontent.com/bokiroke1/project-aw/main/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
 wget https://raw.githubusercontent.com/bokiroke1/project-aw/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
