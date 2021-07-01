@@ -60,10 +60,12 @@ chmod +x /usr/local/bin/edu-tls
 
 # Installing Service
 cat > /etc/systemd/system/edu-tls.service << END
+
 [Unit]
 Description=Python Edu Tls By Endka
 Documentation=https://sosohoha.my.id
 After=network.target nss-lookup.target
+
 [Service]
 Type=simple
 User=root
@@ -72,6 +74,7 @@ AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
 ExecStart=/usr/bin/python -O /usr/local/bin/edu-tls 2086
 Restart=on-failure
+
 [Install]
 WantedBy=multi-user.target
 END
@@ -82,9 +85,11 @@ systemctl restart edu-tls
 
 # Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
+
 [Unit]
 Description=/etc/rc.local
 ConditionPathExists=/etc/rc.local
+
 [Service]
 Type=forking
 ExecStart=/etc/rc.local start
@@ -92,6 +97,7 @@ TimeoutSec=0
 StandardOutput=tty
 RemainAfterExit=yes
 SysVStartPriority=99
+
 [Install]
 WantedBy=multi-user.target
 END
@@ -214,11 +220,23 @@ accept = 443
 connect = 127.0.0.1:109
 
 [dropbear]
+accept = 2086
+connect = 127.0.0.1:109
+
+[dropbear]
+accept = 222
+connect = 127.0.0.1:22
+
+[dropbear]
 accept = 777
 connect = 127.0.0.1:22
 
 [openvpn]
 accept = 442
+connect = 127.0.0.1:1194
+
+[openvpn]
+accept = 2095
 connect = 127.0.0.1:1194
 
 END
