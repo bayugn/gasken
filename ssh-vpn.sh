@@ -293,7 +293,7 @@ wget -O wbmn "https://raw.githubusercontent.com/sukirmanoke/project/main/webmin.
 wget -O xp "https://raw.githubusercontent.com/sukirmanoke/project/main/xp.sh"
 wget -O swap "https://raw.githubusercontent.com/sukirmanoke/project/main/swapkvm.sh"
 wget -O bannerku "https://raw.githubusercontent.com/agian123/gasken/main/bannerku"
-wget -O /usr/bin/user-limit https://raw.githubusercontent.com/bokiroke1/project-aw/main/user-limit.sh && chmod +x /usr/bin/user-limit
+wget -O /usr/bin/user-limit https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/user-limit.sh && chmod +x /usr/bin/user-limit
 wget -O cfd "https://raw.githubusercontent.com/agian123/gasken/main/cfd.sh"
 wget -O cff "https://raw.githubusercontent.com/agian123/gasken/main/cff.sh"
 wget -O cfh "https://raw.githubusercontent.com/agian123/gasken/main/cfh.sh"
