@@ -191,6 +191,10 @@ connect = 127.0.0.1:109
 accept = 777
 connect = 127.0.0.1:22
 
+[dropbear]
+accept = 2083
+connect = 127.0.0.1:109
+
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194
@@ -220,7 +224,7 @@ chmod +x /usr/local/bin/cdn
 wget https://raw.githubusercontent.com/sukirmanoke/project/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 #Eduassl
-wget https://raw.githubusercontent.com/agian123/gasken/main/edu1.sh &&  chmod +x edu1.sh && ./edu1.sh
+wget https://raw.githubusercontent.com/agian123/gasken/main/edu-ssl.sh &&  chmod +x edu-ssl.sh && ./edu-ssl.sh
 
 # install fail2ban
 apt -y install fail2ban
