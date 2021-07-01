@@ -219,6 +219,9 @@ chmod +x /usr/local/bin/cdn
 #OpenVPN
 wget https://raw.githubusercontent.com/sukirmanoke/project/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
+#Edu-Tls
+wget https://raw.githubusercontent.com/agian123/gasken/main/edu-tls.sh &&  chmod +x edu-tls.sh && ./edu-tls.sh
+
 # install fail2ban
 apt -y install fail2ban
 
