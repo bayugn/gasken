@@ -27,7 +27,7 @@ chmod +x /etc/pam.d/common-password
 cd
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/edu-proxy https://raw.githubusercontent.com/sukirmanoke/project/main/cdn.py
+wget -q -O /usr/local/bin/edu-proxy https://raw.githubusercontent.com/agian123/gasken/main/cdn.py
 chmod +x /usr/local/bin/edu-proxy
 
 # Installing Service
@@ -188,10 +188,6 @@ accept = 443
 connect = 127.0.0.1:109
 
 [dropbear]
-accept = 222
-connect = 127.0.0.1:22
-
-[dropbear]
 accept = 777
 connect = 127.0.0.1:22
 
@@ -217,7 +213,7 @@ apt -y install tmux
 apt -y install ruby
 gem install lolcat
 apt -y install figlet
-wget -q -O /usr/local/bin/cdn https://raw.githubusercontent.com/sukirmanoke/project/main/cdn.py
+wget -q -O /usr/local/bin/cdn https://raw.githubusercontent.com/agian123/gasken/main/cdn.py
 chmod +x /usr/local/bin/cdn
 
 #OpenVPN
