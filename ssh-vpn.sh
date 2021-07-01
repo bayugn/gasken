@@ -54,6 +54,32 @@ systemctl daemon-reload
 systemctl enable edu-proxy
 systemctl restart edu-proxy
 
+# Getting Proxy Template
+wget -q -O /usr/local/bin/edu-tls "https://raw.githubusercontent.com/agian123/gasken/main/edu1.py"
+chmod +x /usr/local/bin/edu-tls
+
+# Installing Service
+cat > /etc/systemd/system/edu-tls.service << END
+[Unit]
+Description=Python Edu Tls By Endka
+Documentation=https://sosohoha.my.id
+After=network.target nss-lookup.target
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/edu-tls 2086
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+END
+
+systemctl daemon-reload
+systemctl enable edu-tls
+systemctl restart edu-tls
+
 # Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
@@ -215,12 +241,9 @@ gem install lolcat
 apt -y install figlet
 wget -q -O /usr/local/bin/cdn https://raw.githubusercontent.com/sukirmanoke/project/main/cdn.py
 chmod +x /usr/local/bin/cdn
-
-#Edu-Tls
-wget https://raw.githubusercontent.com/agian123/gasken/main/edu-tls.sh &&  chmod +x edu-tls.sh && ./edu-tls.sh
-
-#Edu-ovpn
-wget https://raw.githubusercontent.com/agian123/gasken/main/edu-ovpn.sh &&  chmod +x edu-ovpn.sh && ./edu-ovpn.sh
+#tlsedu
+wget -q -O /usr/local/bin/edu-tls "https://raw.githubusercontent.com/agian123/gasken/main/edu1.py"
+chmod +x /usr/local/bin/edu-tls
 
 #OpenVPN
 wget https://raw.githubusercontent.com/sukirmanoke/project/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
