@@ -3,7 +3,7 @@
 # ==============================
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/edu-ovpn "https://raw.githubusercontent.com/Endka22/Autoscriptvps/main/edu-op.py"
+wget -q -O /usr/local/bin/edu-ovpn "https://raw.githubusercontent.com/agian123/gasken/main/edu-op.py"
 chmod +x /usr/local/bin/edu-ovpn
 
 # Installing Service
