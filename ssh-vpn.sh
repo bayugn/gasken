@@ -26,6 +26,34 @@ chmod +x /etc/pam.d/common-password
 # go to root
 cd
 
+# Getting Proxy Template
+wget -q -O /usr/local/bin/edu-proxy https://raw.githubusercontent.com/sukirmanoke/project/main/cdn.py
+chmod +x /usr/local/bin/edu-proxy
+
+# Installing Service
+cat > /etc/systemd/system/edu-proxy.service << END
+[Unit]
+Description=Python Edu Proxy By BokirTampa
+Documentation=https://sosohoha.my.id
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/edu-proxy 2095
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+END
+
+systemctl daemon-reload
+systemctl enable edu-proxy
+systemctl restart edu-proxy
+
 # Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
@@ -70,13 +98,6 @@ apt-get remove --purge exim4 -y
 
 # install wget and curl
 apt -y install wget curl
-
-#install python
-apt -y install python
-apt -y install tmux
-apt -y install ruby
-gem install lolcat
-apt -y install figlet
 
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
@@ -167,8 +188,8 @@ accept = 443
 connect = 127.0.0.1:109
 
 [dropbear]
-accept = 2083
-connect = 127.0.0.1:109
+accept = 222
+connect = 127.0.0.1:22
 
 [dropbear]
 accept = 777
@@ -190,14 +211,17 @@ cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
+#install python
+apt -y install python
+apt -y install tmux
+apt -y install ruby
+gem install lolcat
+apt -y install figlet
+wget -q -O /usr/local/bin/cdn https://raw.githubusercontent.com/sukirmanoke/project/main/cdn.py
+chmod +x /usr/local/bin/cdn
+
 #OpenVPN
-wget https://raw.githubusercontent.com/sukirmanoke/project/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
-
-#Edu
-wget https://raw.githubusercontent.com/sukirmanoke/project/main/edu.sh &&  chmod +x edu.sh && ./edu.sh
-
-#Eduassl
-wget https://raw.githubusercontent.com/agian123/gasken/main/edu-ssl.sh &&  chmod +x edu-ssl.sh && ./edu-ssl.sh
+wgethttps://raw.githubusercontent.com/sukirmanoke/project/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -230,6 +254,7 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
+wget -O /etc/issue.net "https://raw.githubusercontent.com/sukirmanoke/project/main/bannerssh.conf"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
@@ -293,7 +318,7 @@ wget -O wbmn "https://raw.githubusercontent.com/sukirmanoke/project/main/webmin.
 wget -O xp "https://raw.githubusercontent.com/sukirmanoke/project/main/xp.sh"
 wget -O swap "https://raw.githubusercontent.com/sukirmanoke/project/main/swapkvm.sh"
 wget -O bannerku "https://raw.githubusercontent.com/agian123/gasken/main/bannerku"
-wget -O /usr/bin/user-limit https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/user-limit.sh && chmod +x /usr/bin/user-limit
+wget -O /usr/bin/user-limit https://raw.githubusercontent.com/sukirmanoke/project/main/user-limit.sh && chmod +x /usr/bin/user-limit
 wget -O cfd "https://raw.githubusercontent.com/agian123/gasken/main/cfd.sh"
 wget -O cff "https://raw.githubusercontent.com/agian123/gasken/main/cff.sh"
 wget -O cfh "https://raw.githubusercontent.com/agian123/gasken/main/cfh.sh"
