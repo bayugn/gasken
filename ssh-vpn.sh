@@ -229,13 +229,13 @@ wget -q -O /usr/local/bin/cdn https://raw.githubusercontent.com/sukirmanoke/proj
 chmod +x /usr/local/bin/cdn
 
 #OpenVPN
-wgethttps://raw.githubusercontent.com/sukirmanoke/project/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/sukirmanoke/project/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 #Edu-Tls
-wget https://raw.githubusercontent.com/sukirmanoke/project/main/edu-tls.sh &&  chmod +x edu-tls.sh && ./edu-tls.sh
+wget https://raw.githubusercontent.com/agian123/gasken/main/edu-tls.sh &&  chmod +x edu-tls.sh && ./edu-tls.sh
 
 #Edu-ovpn
-wget https://raw.githubusercontent.com/sukirmanoke/project/main/edu-ovpn.sh &&  chmod +x edu-ovpn.sh && ./edu-ovpn.sh
+wget https://raw.githubusercontent.com/agian123/gasken/main/edu-ovpn.sh &&  chmod +x edu-ovpn.sh && ./edu-ovpn.sh
 
 # install fail2ban
 apt -y install fail2ban
